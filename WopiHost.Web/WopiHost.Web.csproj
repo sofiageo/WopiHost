@@ -30,6 +30,14 @@
     <ProjectReference Include="..\WopiHost.Url\WopiHost.Url.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="hostsettings.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="npm install" />
     <Exec Command="bower install" />

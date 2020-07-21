@@ -18,6 +18,7 @@ namespace WopiHost.Web
         public Startup(IWebHostEnvironment env)
         {
             var builder = new ConfigurationBuilder().SetBasePath(env.ContentRootPath)
+                .AddJsonFile("hostsettings.json", optional: true)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
