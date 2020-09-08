@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>WopiHost.Core Class Library</Description>
     <Authors>Petr Svihlik</Authors>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>WopiHost.Core</AssemblyName>
     <PackageId>WopiHost.Core</PackageId>
     <PackageLicenseUrl>https://github.com/petrsvihlik/WopiHost/blob/master/LICENSE.txt</PackageLicenseUrl>
@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WopiHost.Abstractions\WopiHost.Abstractions.csproj" />
+    <ProjectReference Include="..\WopiHost.FileSystemProvider\WopiHost.FileSystemProvider.csproj" />
   </ItemGroup>
 
   <ItemGroup>
