@@ -10,6 +10,7 @@ using WopiHost.Abstractions;
 using WopiHost.Core.Models;
 using WopiHost.Core.Results;
 using WopiHost.Core.Security;
+using WopiHost.FileSystemProvider;
 
 namespace WopiHost.Core.Controllers
 {
@@ -64,6 +65,17 @@ namespace WopiHost.Core.Controllers
                 return Unauthorized();
             }
             return new JsonResult(StorageProvider.GetWopiFile(id)?.GetCheckFileInfo(User, HostCapabilities), null);
+        }
+        
+        [HttpGet("metadata")]
+        public async Task<IActionResult> GetMetadata()
+        {
+            WopiSecurityHandler securityHandler = new WopiSecurityHandler();
+
+            // IWopiFile file = StorageProvider.GetWopiFile(id);
+            var token = securityHandler.GenerateAccessToken("Anonymous", "");
+            
+            return new JsonResult(token, null);
         }
 
         /// <summary>
