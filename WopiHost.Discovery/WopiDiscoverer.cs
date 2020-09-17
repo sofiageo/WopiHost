@@ -29,7 +29,7 @@ namespace WopiHost.Discovery
         public WopiDiscoverer(IDiscoveryFileProvider discoveryFileProvider, NetZoneEnum netZone = NetZoneEnum.Any)
         {
             DiscoveryFileProvider = discoveryFileProvider;
-            NetZone = netZone;
+            NetZone = NetZoneEnum.ExternalHttps;
         }
 
         private async Task<IEnumerable<XElement>> GetAppsAsync()

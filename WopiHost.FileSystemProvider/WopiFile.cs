@@ -63,6 +63,7 @@ namespace WopiHost.FileSystemProvider
             return FileInfo.Open(FileMode.Truncate);
         }
 
-        public string Owner => FileInfo.GetAccessControl().GetOwner(typeof(NTAccount)).ToString();
+        // public string Owner => FileInfo.GetAccessControl().GetOwner(typeof(NTAccount)).ToString();
+        public string Owner => "Anonymous";
     }
 }

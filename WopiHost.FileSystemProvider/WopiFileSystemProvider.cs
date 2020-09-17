@@ -73,7 +73,8 @@ namespace WopiHost.FileSystemProvider
         /// <param name="identifier">A base64-encoded folder path.</param>
         public List<IWopiFile> GetWopiFiles(string identifier = "")
         {
-            string folderPath = DecodeIdentifier(identifier);
+            // string folderPath = DecodeIdentifier(identifier);
+            string folderPath = ".";
             List<IWopiFile> files = new List<IWopiFile>();
             foreach (string path in Directory.GetFiles(Path.Combine(WopiAbsolutePath, folderPath)))  //TODO Directory.Enumerate...
             {
